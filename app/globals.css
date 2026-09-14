@@ -1,0 +1,36 @@
+@layer reset, base, tokens, recipes, utilities;
+
+html {
+  background: #e7e5df;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #e7e5df;
+  color: #161616;
+  font-family: var(--font-oxanium), Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #161616;
+  color: #f7f7f2;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}

@@ -1,0 +1,28 @@
+services:
+  nextjs-app:
+    build:
+      context: .
+      target: development
+    container_name: nextjs_dev
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+      - next_cache:/app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    command: sh -c "test -d node_modules/next || npm install && npm run dev"
+    stdin_open: true
+    tty: true
+volumes:
+  node_modules:
+  next_cache:
+# Comandos para Arrancar y Detener el contenedor de desarrollo de Next.js:
+# docker compose down
+#docker compose pull
+#docker compose up -d --build
+# 
+# 

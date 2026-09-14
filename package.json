@@ -1,0 +1,32 @@
+{
+  "name": "poke-query-optimizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "locales:generate": "python3 scripts/generate_locales.py",
+    "panda:generate": "panda codegen && panda cssgen",
+    "dev": "npm run panda:generate && next dev --hostname 0.0.0.0",
+    "build": "npm run panda:generate && next build",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "npm run panda:generate"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^1.6.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^5.0.0"
+  }
+}
